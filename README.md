@@ -1,9 +1,7 @@
 # triPOSCloud.CSharp
 
-<a href="https://developer.vantiv.com/?utm_campaign=githubcta&utm_medium=hyperlink&utm_source=github&utm_content=gotquestions">Got questions? Connect with our experts on Worldpay ONE.</a>
-
-<a href="https://developer.vantiv.com/?utm_campaign=githubcta&utm_medium=hyperlink&utm_source=github&utm_content=codingforcommerce">Are you coding for commerce? Connect with our experts on Worldpay ONE.</a>
-
+* <a href="https://developer.vantiv.com/?utm_campaign=githubcta&utm_medium=hyperlink&utm_source=github&utm_content=gotquestions">Got questions? Connect with our experts on Worldpay ONE.</a>
+* <a href="https://developer.vantiv.com/?utm_campaign=githubcta&utm_medium=hyperlink&utm_source=github&utm_content=codingforcommerce">Are you coding for commerce? Connect with our experts on Worldpay ONE.</a>
 * Questions?  certification@elementps.com
 * **Feature request?** Open an issue.
 * Feel like **contributing**?  Submit a pull request.
@@ -42,7 +40,7 @@ After plugging your triPOS Cloud device into power and obtaining a network conne
 
 ```
 
-## Step 2:Send a Transaction
+## Step 2: Send a Transaction to triPOS Cloud
 
 Now that the device is paired to triPOS Cloud you should see the triPOS logo on the device.  The next step is to send a sale transaction.  Do this by using the triPOS Cloud transaction API to POST a json request to:  https://triposcert.vantiv.com/api/v1/sale.  Note:  use the same laneId as you used above, this laneId is the identifier for the device you paired above.  This is a simple json body and you will likely need to provide additional information for your use case.
 
@@ -61,7 +59,7 @@ Now that the device is paired to triPOS Cloud you should see the triPOS logo on 
 
 ```
 
-## Step 3: Receive response from triPOS
+## Step 3: Receive response from triPOS Cloud
 
 The response will be in a JSON format and you can leverage any JSON library to assist with parsing/serializing.  Only a portion of the response is include in the example below.
 
