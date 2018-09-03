@@ -235,7 +235,7 @@ namespace triPOSCloud.CSharp
                 string data = @"{""laneId"": {{LANEID}},""transactionAmount"": ""{{AMOUNT}}"",	""storeCard"" : {""Id"":""{{STORECARDID}}"",""Password"":""{{STORECARDPASSWORD}}""}}";
 
                 data = data.Replace("{{LANEID}}", "1");
-                data = data.Replace("{{AMOUNT}}", "1.35");
+                data = data.Replace("{{AMOUNT}}", "500.00");
                 data = data.Replace("{{STORECARDID}}", configData.StoreCardID);
                 data = data.Replace("{{STORECARDPASSWORD}}", configData.StoreCardPassword);
                 txtRequest.Text = data;
@@ -294,7 +294,7 @@ namespace triPOSCloud.CSharp
                 string data = @"{""laneId"": {{LANEID}},""transactionAmount"": ""{{AMOUNT}}"",	""storeCard"" : {""Id"":""{{STORECARDID}}"",""Password"":""{{STORECARDPASSWORD}}""}}";
 
                 data = data.Replace("{{LANEID}}", "1");
-                data = data.Replace("{{AMOUNT}}", "1.35");
+                data = data.Replace("{{AMOUNT}}", "500.00");
                 data = data.Replace("{{STORECARDID}}", configData.StoreCardID);
                 data = data.Replace("{{STORECARDPASSWORD}}", configData.StoreCardPassword);
                 txtRequest.Text = data;
