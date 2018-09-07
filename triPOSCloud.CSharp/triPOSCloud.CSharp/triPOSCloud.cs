@@ -192,7 +192,7 @@ namespace triPOSCloud.CSharp
                 this.Cursor = Cursors.WaitCursor;
                 string url = "https://triposcert.vantiv.com/api/v1/card/financial/1?isEncryptedDataNeeded=true";
 
-                var headerDict = GetHeaders();               
+                var headerDict = GetHeaders();
 
                 var webRequest = new HttpSender();
                 var response = webRequest.Send(string.Empty, url, "json", "GET", headerDict);
@@ -209,7 +209,7 @@ namespace triPOSCloud.CSharp
                     encTrack = encryptedTrack2;
                 }
 
-                var giftSale = GetGiftSaleXML(1.23, encTrack , keySerial, format);
+                var giftSale = GetGiftSaleXML(1.23, encTrack, keySerial, format);
                 txtRequest.Text += "\n\n";
                 txtRequest.Text += giftSale;
 
@@ -217,6 +217,7 @@ namespace triPOSCloud.CSharp
                 var configData = new ConfigurationData();
                 url = configData.ExpressXMLEndpoint;
                 var response2 = webRequest2.Send(giftSale, url, "xml", "POST", null);
+                var giftCardSaleResponse = new GiftSaleResponse(response2);
                 txtResponse.Text += response2;
 
             }

@@ -58,6 +58,7 @@
       <DependentUpon>ActivationCodeInput.cs</DependentUpon>
     </Compile>
     <Compile Include="ConfigurationData.cs" />
+    <Compile Include="GiftSaleResponse.cs" />
     <Compile Include="triPOSCloud.cs">
       <SubType>Form</SubType>
     </Compile>
