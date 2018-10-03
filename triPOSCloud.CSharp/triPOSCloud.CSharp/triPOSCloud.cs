@@ -137,7 +137,7 @@ namespace triPOSCloud.CSharp
             return headerDict;
         }
 
-        private string GetGiftSaleXML(double amount, string encryptedTrack2Data, string cardDataKeySerialNumber, string encryptedFormat)
+        private string GetGiftSaleXML(double amount, string encryptedTrack2Data, string cardDataKeySerialNumber, string encryptedFormat, string magneprintData)
         {
 
             XNamespace express = "https://transaction.elementexpress.com";
@@ -174,7 +174,8 @@ namespace triPOSCloud.CSharp
                                     new XElement(express + "MarketCode", "7")
                                             ),
                                 new XElement(express + "Card",
-                                    new XElement(express + "MagneprintData", encryptedTrack2Data),
+                                    String.IsNullOrEmpty(encryptedTrack2Data) ? null : new XElement(express + "EnctypedTrack2Data", encryptedTrack2Data),
+                                    String.IsNullOrEmpty(magneprintData) ? null : new XElement(express + "MagneprintData", magneprintData),                                    
                                     new XElement(express + "CardDataKeySerialNumber", cardDataKeySerialNumber),
                                     new XElement(express + "EncryptedFormat", encryptedFormat.Replace("Format",""))
                                             )
@@ -203,13 +204,7 @@ namespace triPOSCloud.CSharp
                 string keySerial = data.encryptedCardData.cardDataKeySerialNumber;
                 string format = data.encryptedCardData.encryptedFormat;
                 string encryptedTrack2 = data.encryptedCardData.encryptedTrack2Data; //this is populated for ingenico devices
-                string encTrack = magnePrintData;
-                if (String.IsNullOrEmpty(encTrack))
-                {
-                    encTrack = encryptedTrack2;
-                }
-
-                var giftSale = GetGiftSaleXML(1.23, encTrack, keySerial, format);
+                var giftSale = GetGiftSaleXML(1.23, encryptedTrack2, keySerial, format, magnePrintData);
                 txtRequest.Text += "\n\n";
                 txtRequest.Text += giftSale;
 
